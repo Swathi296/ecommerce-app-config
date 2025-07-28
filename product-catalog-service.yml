@@ -2,31 +2,18 @@ server:
   port: 8082
 
 spring:
-  application:
-    name: product-catalog-service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/product_catalog_db
+      uri: mongodb://localhost:27017/product_db
+  application:
+    name: product-catalog-service
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
-resilience4j:
-  circuitbreaker:
-    instances:
-      productServiceCB:
-        registerHealthIndicator: true
-        slidingWindowSize: 5
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
-  retry:
-    instances:
-      productServiceRetry:
-        maxAttempts: 3
-        waitDuration: 2s
-  timelimiter:
-    instances:
-      productServiceTL:
-        timeoutDuration: 4s
+logging:
+  level:
+    root: INFO
