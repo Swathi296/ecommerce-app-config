@@ -1,19 +1,10 @@
-server:
-  port: 8082
-
 spring:
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/product_db
   application:
     name: product-catalog-service
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
-logging:
-  level:
-    root: INFO
+  config:
+    import: configserver:http://localhost:8088
+  cloud:
+    config:
+      name: product-catalog-service
+      profile: default
+      label: main
