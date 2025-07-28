@@ -2,43 +2,42 @@ server:
   port: 8082
 
 spring:
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: product_catalog_db
-
   application:
     name: product-catalog-service
 
-  jackson:
-    serialization:
-      INDENT_OUTPUT: true
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/productdb
 
-logging:
-  level:
-    root: INFO
-    org.springframework.web: DEBUG
-    com.example.product_catalog_service: DEBUG
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.actuate.autoconfigure.tracing.OpenTelemetryAutoConfiguration
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+    propagation:
+      type: b3
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
 
-resilience4j:
-  circuitbreaker:
-    instances:
-      productService:
-        registerHealthIndicator: true
-        slidingWindowSize: 5
-        minimumNumberOfCalls: 3
-        failureRateThreshold: 50
-        waitDurationInOpenState: 5s
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{traceId:-},%X{spanId:-}]"
 
-  retry:
-    instances:
-      productService:
-        maxAttempts: 3
-        waitDuration: 2s
+message: "Welcome to Product Catalog Service"
