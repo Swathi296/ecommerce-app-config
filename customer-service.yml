@@ -2,10 +2,8 @@ server:
   port: 8081
 
 spring:
-  application:
-    name: customer-service
   datasource:
-    url: jdbc:mysql://localhost:3306/customerdb
+    url: jdbc:mysql://localhost:3306/customer_db
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -13,22 +11,4 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-  main:
-    allow-bean-definition-overriding: true
-
-product:
-  service:
-    base-url: http://localhost:8082/api/products
-
-logging:
-  level:
-    org.springframework.web.client.RestTemplate: DEBUG
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+    database-platform: org.hibernate.dialect.MySQLDialect
