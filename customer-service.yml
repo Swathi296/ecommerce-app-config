@@ -39,15 +39,24 @@ resilience4j:
       productServiceCB:
         registerHealthIndicator: true
         slidingWindowSize: 5
-        minimumNumberOfCalls: 5
+        minimumNumberOfCalls: 3
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 2
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        eventConsumerBufferSize: 10
 
   retry:
     instances:
       productServiceRetry:
         maxAttempts: 3
         waitDuration: 2s
+        retryExceptions:
+          - org.springframework.web.client.HttpServerErrorException
+          - java.io.IOException
+        ignoreExceptions:
+          - java.lang.IllegalArgumentException
+
 
   mail:
     host: smtp.gmail.com
