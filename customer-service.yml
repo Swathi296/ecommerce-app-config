@@ -60,7 +60,7 @@ logging:
   level:
     root: INFO
     com.example.customer_service: DEBUG
-   
+
 springdoc:
   api-docs:
     path: /api-docs
