@@ -62,17 +62,19 @@ resilience4j:
           - java.lang.IllegalArgumentException
 
 
+  spring:
   mail:
     host: smtp.gmail.com
     port: 587
     username: swathi.medisetti3@gmail.com
-    password: swathi12345swathi
+    password: lyznkrgnrbjcijgs
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
+
 
   thymeleaf:
     prefix: classpath:/templates/
