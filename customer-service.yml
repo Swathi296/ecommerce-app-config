@@ -1,13 +1,10 @@
 server:
   port: 8081
-  
-springdoc:
-  api-docs:
-    path: /api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    
+
 spring:
+  application:
+    name: customer-service
+
   datasource:
     url: jdbc:mysql://localhost:3306/customerdb
     username: root
@@ -49,6 +46,12 @@ spring:
     encoding: UTF-8
     cache: false
 
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
 eureka:
   client:
     register-with-eureka: true
@@ -67,4 +70,6 @@ logging:
     root: INFO
     com.example.customer_service: DEBUG
 
-
+# Optional dynamic config value (used in /config-message endpoint)
+customer:
+  message: Welcome from customer-service config!
