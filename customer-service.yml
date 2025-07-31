@@ -1,6 +1,10 @@
 server:
   port: 8081
 
+product:
+  service:
+    url: http://localhost:8082/api/products
+
 spring:
   application:
     name: customer-service
