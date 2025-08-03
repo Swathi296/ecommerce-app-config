@@ -58,7 +58,7 @@ kafka:
 resilience4j:
   circuitbreaker:
     instances:
-      productServiceCB:
+      productService:
         registerHealthIndicator: true
         slidingWindowSize: 5
         minimumNumberOfCalls: 3
@@ -70,7 +70,7 @@ resilience4j:
 
   retry:
     instances:
-      productServiceRetry:
+      productService:
         maxAttempts: 3
         waitDuration: 2s
         retryExceptions:
