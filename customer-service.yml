@@ -78,6 +78,7 @@ resilience4j:
           - java.io.IOException
         ignoreExceptions:
           - java.lang.IllegalArgumentException
+
 springdoc:
   api-docs:
     enabled: true
