@@ -23,10 +23,10 @@ springdoc:
     path: /swagger-ui.html
     
 messages:
-  productCreated: "Product created successfully"
-  productFetched: "Product fetched successfully"
-  productUpdated: "Product updated successfully"
-  productDeleted: "Product deleted successfully"
-  productPartiallyUpdated: "Product partially updated successfully"
-  productFiltered: "Filtered products fetched successfully"
-  productNotFound: "Product not found with ID: "
+  product-created: Product created successfully
+  product-fetched: Product fetched successfully
+  product-updated: Product updated successfully
+  product-deleted: Product deleted successfully
+  product-partially-updated: Product partially updated successfully
+  product-filtered: Filtered products fetched successfully
+  product-not-found: Product not found with given ID
