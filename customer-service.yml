@@ -104,19 +104,26 @@ logging:
     root: INFO
     com.example.customer_service: DEBUG
 
-customer:
-  message: Welcome from customer-service config!
-customer:
-  messages:
-    created: Customer created successfully
-    fetched: Customers fetched successfully
-    updated: Customer updated successfully
-    deleted: Customer deleted successfully
-    partially-updated: Customer partially updated successfully
-    not-found: Customer not found
-    products-fallback: Product service is currently unavailable. Please try again later.
-    created-template: Customer "%s" has been created successfully.
-    updated-template: Customer "%s" has been updated.
-    patched-template: Customer "%s" has been partially updated.
-    deleted-template: Customer "%s" has been deleted.
+  customer:
+    messages:
+      created: Customer created successfully
+      fetched: Customers fetched successfully
+      updated: Customer updated successfully
+      deleted: Customer deleted successfully
+      partially-updated: Customer partially updated successfully
+      not-found: Customer not found
+      products-fallback: Product service is currently unavailable. Please try again later.
+      created-template: Customer "%s" has been created successfully.
+      updated-template: Customer "%s" has been updated.
+      patched-template: Customer "%s" has been partially updated.
+      deleted-template: Customer "%s" has been deleted.
+
+      # ✉️ Email messages
+      email-simple-json: ✅ Simple email sent successfully (JSON)
+      email-attachment-json: ✅ Email with attachments sent successfully (JSON)
+      email-template-json: ✅ HTML email with Thymeleaf sent successfully (JSON)
+
+      email-simple-form: ✅ Simple email sent successfully (form-data)
+      email-attachment-form: ✅ Email with attachments sent successfully (form-data)
+      email-template-form: ✅ HTML email sent successfully (form-data)
 
