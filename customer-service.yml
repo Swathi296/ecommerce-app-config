@@ -117,5 +117,8 @@ logging:
       updated-template: Customer "%s" has been updated.
       patched-template: Customer "%s" has been partially updated.
       deleted-template: Customer "%s" has been deleted.
+email:
+  from: swathi.medisetti3@gmail.com
+  success-message: Email sent successfully
+  error-message: Failed to send email
 
-    
