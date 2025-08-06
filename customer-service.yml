@@ -103,22 +103,30 @@ logging:
   level:
     root: INFO
     com.example.customer_service: DEBUG
+customer:
+  messages:
+    created: Customer created successfully
+    fetched: Customers fetched successfully
+    updated: Customer updated successfully
+    deleted: Customer deleted successfully
+    partially-updated: Customer partially updated successfully
+    not-found: Customer not found
+    products-fallback: Product service is currently unavailable. Please try again later.
+    created-template: Customer "%s" has been created successfully.
+    updated-template: Customer "%s" has been updated.
+    patched-template: Customer "%s" has been partially updated.
+    deleted-template: Customer "%s" has been deleted.
 
-  customer:
-    messages:
-      created: Customer created successfully
-      fetched: Customers fetched successfully
-      updated: Customer updated successfully
-      deleted: Customer deleted successfully
-      partially-updated: Customer partially updated successfully
-      not-found: Customer not found
-      products-fallback: Product service is currently unavailable. Please try again later.
-      created-template: Customer "%s" has been created successfully.
-      updated-template: Customer "%s" has been updated.
-      patched-template: Customer "%s" has been partially updated.
-      deleted-template: Customer "%s" has been deleted.
 email:
   from: swathi.medisetti3@gmail.com
   success-message: Email sent successfully
   error-message: Failed to send email
+
+  messages:
+    simple-json: Simple email (JSON) sent successfully
+    attachment-json: Email with attachment (JSON) sent successfully
+    template-json: HTML template email (JSON) sent successfully
+    simple-form: Simple email (form) sent successfully
+    attachment-form: Email with attachment (form) sent successfully
+    template-form: HTML template email (form) sent successfully
 
